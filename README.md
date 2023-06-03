@@ -10,7 +10,7 @@ An all-purpose API wrapper for the SpaceTraders REST API written in Typescript.
 
 ---
 
-## <p align="center"> [Documentation can be found here](/https://mia-z.github.io/poisuN/modules.html)
+## <p align="center"> [Documentation can be found here](https://mia-z.github.io/poisuN/modules.html)
 
 ---
 
