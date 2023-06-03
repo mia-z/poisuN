@@ -1,0 +1,10 @@
+{
+    "$schema": "https://typedoc.org/schema.json",
+    "entryPoints": ["./src/poisun.ts"],
+    "out": "doc",
+    "cleanOutputDir": true,
+    "hideGenerator": true,
+    "plugin": [
+        "typedoc-plugin-markdown"
+    ],
+}
