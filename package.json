@@ -12,7 +12,20 @@
       }
     }
   },
-  "repository": "https://github.com/mia-z/poisun",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mia-z/poisun"
+  },
+  "bugs": {
+    "url": "https://github.com/mia-z/poisun/issues  "
+  },
+  "keywords": [
+    "typescript",
+    "javascript",
+    "spacetraders",
+    "rest",
+    "api"
+  ],
   "author": "Ryan",
   "license": "MIT",
   "packageManager": "yarn@3.5.1",

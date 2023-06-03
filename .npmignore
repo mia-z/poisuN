@@ -9,3 +9,7 @@ src
 README.md
 Dockerfile
 *.sh
+doc
+.yarn
+.github
+.gitfiles
