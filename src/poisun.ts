@@ -567,5 +567,6 @@ export async function GetGameStatus(): Promise<GameStatus> {
  * @returns {Promise<RegisterAgentResponseBody>}
  */
 export async function RegisterAgent(newAgent: RegisterAgentRequestBody): Promise<RegisterAgentResponseBody> {
-    throw Error("Not implemented");
+    const res = await axios.post("https://api.spacetraders.io/v2/register", newAgent);
+    return res.data;
 }

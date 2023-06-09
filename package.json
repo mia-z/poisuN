@@ -1,6 +1,6 @@
 {
   "name": "@miaz/poisun",
-  "version": "0.0.1",
+  "version": "0.0.4",
   "description": "Typescript REST API wrapper for SpaceTradersAPI game",
   "main": "index.ts",
   "types": "index.d.ts",
@@ -42,7 +42,7 @@
     "docgen": "typedoc --options ./typedoc.json",
     "build:swc": "yarn swc ./src --out-file ./dist/index.js --config-file ./.swcrc",
     "build:tsc": "yarn tsc",
-    "publish": "yarn build:swc && yarn docgen && npm publish"
+    "publish": "yarn build:swc && yarn docgen"
   },
   "dependencies": {
     "axios": "^1.4.0",
