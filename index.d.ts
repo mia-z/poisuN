@@ -2,17 +2,17 @@
 import { AxiosInstance } from "axios"
 
 //https://stackoverflow.com/questions/39494689/is-it-possible-to-restrict-number-to-a-certain-range
-type Enumerate<N extends number, Acc extends number[] = []> = Acc["length"] extends N
-  ? Acc[number]
-  : Enumerate<N, [...Acc, Acc["length"]]>
+export type Enumerate<N extends number, Acc extends number[] = []> = Acc["length"] extends N
+    ? Acc[number]
+    : Enumerate<N, [...Acc, Acc["length"]]>
 
-type IntRange<F extends number, T extends number> = Exclude<Enumerate<T>, Enumerate<F>>
+export type IntRange<F extends number, T extends number> = Exclude<Enumerate<T>, Enumerate<F>>
 
 /**
  * START GAME SYMBOLS
  */
 
-type FactionTraitSymbol = 
+export type FactionTraitSymbol = 
     | "BUREAUCRATIC"
     | "SECRETIVE"
     | "CAPITALISTIC"
@@ -73,7 +73,7 @@ type FactionTraitSymbol =
     | "FREE_MARKETS"
     | "ENTREPRENEURIAL";
 
-type FactionSymbol = 
+export type FactionSymbol = 
     | "COSMIC"
     | "VOID"
     | "GALACTIC"
@@ -81,7 +81,7 @@ type FactionSymbol =
     | "DOMINION"
     | string;
 
-type TradeGood =
+export type TradeGood =
     | "PRECIOUS_STONES"
     | "QUARTZ_SAND"
     | "SILICON_CRYSTALS"
@@ -193,7 +193,7 @@ type TradeGood =
     | "MOUNT_MISSILE_LAUNCHER_I"
     | "MOUNT_TURRET_I";
 
-type SystemType =
+export type SystemType =
     | "NEUTRON_STAR"
     | "RED_STAR"
     | "ORANGE_STAR"
@@ -205,7 +205,7 @@ type SystemType =
     | "NEBULA"
     | "UNSTABLE";
 
-type WaypointTrait =
+export type WaypointTrait =
     | "UNCHARTED"
     | "MARKETPLACE"
     | "SHIPYARD"
@@ -266,7 +266,7 @@ type WaypointTrait =
     | "OCEAN"
     | "STRIPPED";
 
-type WaypointType =
+export type WaypointType =
     | "PLANET"
     | "GAS_GIANT"
     | "MOON"
@@ -277,7 +277,7 @@ type WaypointType =
     | "DEBRIS_FIELD"
     | "GRAVITY_WELL";
 
-type ShipRole =
+export type ShipRole =
     | "FABRICATOR"
     | "HARVESTER"
     | "HAULER"
@@ -293,7 +293,7 @@ type ShipRole =
     | "EXPLORER"
     | "REFINERY";
 
-type ShipType =
+export type ShipType =
     | "SHIP_PROBE"
     | "SHIP_MINING_DRONE"
     | "SHIP_INTERCEPTOR"
@@ -305,18 +305,18 @@ type ShipType =
     | "SHIP_ORE_HOUND"
     | "SHIP_REFINING_FREIGHTER";
 
-type ShipNavStatus =
+export type ShipNavStatus =
     | "IN_TRANSIT"
     | "IN_ORBIT"
     | "DOCKED";
 
-type ShipNavFlightMode =
+export type ShipNavFlightMode =
     | "DRIFT"
     | "STEALTH"
     | "CRUISE"
     | "BURN";
 
-type ShipModuleSymbol =
+export type ShipModuleSymbol =
     | "MODULE_MINERAL_PROCESSOR_I"
     | "MODULE_CARGO_HOLD_I"
     | "MODULE_CREW_QUARTERS_I"
@@ -335,7 +335,7 @@ type ShipModuleSymbol =
     | "MODULE_SHIELD_GENERATOR_I"
     | "MODULE_SHIELD_GENERATOR_II";
 
-type ShipMountSymbol =
+export type ShipMountSymbol =
     | "MOUNT_GAS_SIPHON_I"
     | "MOUNT_GAS_SIPHON_II"
     | "MOUNT_GAS_SIPHON_III"
@@ -352,7 +352,7 @@ type ShipMountSymbol =
     | "MOUNT_MISSILE_LAUNCHER_I"
     | "MOUNT_TURRET_I";
 
-type Deposit =
+export type Deposit =
     | "QUARTZ_SAND"
     | "SILICON_CRYSTALS"
     | "PRECIOUS_STONES"
@@ -368,20 +368,20 @@ type Deposit =
     | "URANITE_ORE"
     | "MERITIUM_ORE";
 
-type ShipEngineSymbol =
+export type ShipEngineSymbol =
     | "ENGINE_IMPULSE_DRIVE_I"
     | "ENGINE_ION_DRIVE_I"
     | "ENGINE_ION_DRIVE_II"
     | "ENGINE_HYPER_DRIVE_I";
 
-type ShipReactorSymbol =
+export type ShipReactorSymbol =
     | "REACTOR_SOLAR_I"
     | "REACTOR_FUSION_I"
     | "REACTOR_FISSION_I"
     | "REACTOR_CHEMICAL_I"
     | "REACTOR_ANTIMATTER_I";
 
-type ShipFrameSymbol =
+export type ShipFrameSymbol =
     | "FRAME_PROBE"
     | "FRAME_DRONE"
     | "FRAME_INTERCEPTOR"
@@ -398,9 +398,9 @@ type ShipFrameSymbol =
     | "FRAME_CRUISER"
     | "FRAME_CARRIER";
 
-type ShipCrewRotation = "STRICT" | "RELAXED";
+export type ShipCrewRotation = "STRICT" | "RELAXED";
 
-type ShipRefineProduce =
+export type ShipRefineProduce =
     | "IRON"
     | "COPPER"
     | "SILVER"
@@ -411,12 +411,12 @@ type ShipRefineProduce =
     | "MERITIUM"
     | "FUEL"
 
-type SurveySize =
+export type SurveySize =
     | "SMALL"
     | "MODERATE"
     | "LARGE"
 
-type MarketTradeGoodSupplyType =
+export type MarketTradeGoodSupplyType =
     | "SCARCE"
     | "LIMITED"
     | "MODERATE"
@@ -430,13 +430,13 @@ type MarketTradeGoodSupplyType =
  * START GAME TYPES
  */
 
-type Meta = {
+export type Meta = {
     total: number,
     page: number,
     limit: number
 }
 
-type GameStatus = {
+export type GameStatus = {
     status: string,
     version: string,
     resetDate: string,
@@ -448,34 +448,34 @@ type GameStatus = {
     links: Array<StatusLink>
 }
 
-type GameStatusStats = {
+export type GameStatusStats = {
     agents: number,
     ships: number,
     systems: number,
     waypoints: number
 }
 
-type Leaderboards = {
+export type Leaderboards = {
     mostCredits: Array<{ agentSymbol: AgentSymbol, credits: number }>,
     mostSubmittedCharts: Array<{ agentSymbol: AgentSymbol, chartCount: number }>
 }
 
-type ServerResetInfo = {
+export type ServerResetInfo = {
     next: string,
     frequency: string,
 }
 
-type Announcement = {
+export type Announcement = {
     title: string,
     body: string
 }
 
-type StatusLink = {
+export type StatusLink = {
     name: string,
     url: string
 }
 
-type Agent = {
+export type Agent = {
     accountId: string,
     symbol: AgentSymbol,
     headquarters: string,
@@ -483,7 +483,7 @@ type Agent = {
     startingFaction: FactionSymbol
 }
 
-type Contract = {
+export type Contract = {
     id: string,
     factionSymbol: FactionSymbol,
     type: string,
@@ -494,25 +494,25 @@ type Contract = {
     deadlineToAccept: string
 }
 
-type ContractTerms = {
+export type ContractTerms = {
     deadline: string,
     payment: ContractPayment,
     deliver: Array<ContractDeliverGood>
 }
 
-type ContractDeliverGood = {
+export type ContractDeliverGood = {
     tradeSymbol: TradeGood,
     destinationSymbol: string,
     unitsRequired: number,
     unitsFulfilled: number
 }
 
-type ContractPayment = {
+export type ContractPayment = {
     onAccepted: number,
     onFulfilled: number
 }
 
-type Ship = {
+export type Ship = {
     symbol: string,
     registration: ShipRegistration,
     nav: ShipNav,
@@ -526,26 +526,26 @@ type Ship = {
     fuel: ShipFuel
 }
 
-type ShipCargo = {
+export type ShipCargo = {
     capacity: number,
     units: number,
     inventory: Array<ShipCargoItem>
 }
 
-type ShipCargoItem = {
+export type ShipCargoItem = {
     symbol: string,
     name: string,
     description: string,
     units: number
 }
 
-type ShipRegistration = {
+export type ShipRegistration = {
     name: string,
     factionSymbol: FactionSymbol,
     role: ShipRole
 }
 
-type ShipNav = {
+export type ShipNav = {
     systemSymbol: string,
     waypointSymbol: WaypointSymbol,
     route: ShipNavRoute,
@@ -553,14 +553,14 @@ type ShipNav = {
     flightMode: ShipNavFlightMode
 }
 
-type ShipNavRoute = {
+export type ShipNavRoute = {
     destination: ShipNavRouteWaypoint,
     departure: ShipNavRouteWaypoint,
     departureTime: string,
     arrival: string,
 }
 
-type ShipNavRouteWaypoint = {
+export type ShipNavRouteWaypoint = {
     symbol: string,
     type: WaypointType,
     systemSymbol: SystemSymbol
@@ -568,7 +568,7 @@ type ShipNavRouteWaypoint = {
     y: number
 }
 
-type ShipFuel = {
+export type ShipFuel = {
     current: number,
     capacity: number,
     consumed: {
@@ -577,7 +577,7 @@ type ShipFuel = {
     }
 }
 
-type ShipMount = {
+export type ShipMount = {
     symbol: ShipMountSymbol,
     name: string,
     description: string,
@@ -586,7 +586,7 @@ type ShipMount = {
     requirements: Requirements
 }
 
-type ShipModule = {
+export type ShipModule = {
     symbol: ShipModuleSymbol,
     capacity: number,
     range: number,
@@ -595,7 +595,7 @@ type ShipModule = {
     requirements: Requirements
 }
 
-type ShipEngine = {
+export type ShipEngine = {
     symbol: ShipEngineSymbol,
     name: string,
     description: string,
@@ -604,7 +604,7 @@ type ShipEngine = {
     requirements: Requirements
 }
 
-type ShipReactor = {
+export type ShipReactor = {
     symbol: ShipReactorSymbol,
     name: string,
     description: string,
@@ -613,7 +613,7 @@ type ShipReactor = {
     requirements: Requirements
 }
 
-type ShipFrame = {
+export type ShipFrame = {
     symbol: ShipFrameSymbol,
     name: string,
     description: string,
@@ -624,7 +624,7 @@ type ShipFrame = {
     requirements: Requirements
 }
 
-type ShipCrew = {
+export type ShipCrew = {
     current: number,
     required: number,
     capacity: number,
@@ -633,7 +633,7 @@ type ShipCrew = {
     wages: number
 }
 
-type Faction = {
+export type Faction = {
     symbol: FactionSymbol,
     name: string,
     description: string,
@@ -642,20 +642,20 @@ type Faction = {
     isRecruiting: boolean
 }
 
-type FactionTrait = {
+export type FactionTrait = {
     symbol: FactionTraitSymbol,
     name: string,
     description: string
 }
 
-type Shipyard = {
+export type Shipyard = {
     symbol: string,
     shipTypes: Array<ShipType>,
     transactions: Array<ShipyardTransaction>,
     ships: Array<ShipyardShip>
 }
 
-type ShipyardShip = {
+export type ShipyardShip = {
     type: ShipType,
     name: string,
     purchasePrice: number,
@@ -666,7 +666,7 @@ type ShipyardShip = {
     mounts: Array<ShipMount>
 }
 
-type ShipyardTransaction = {
+export type ShipyardTransaction = {
     waypointSymbol: string,
     shipSymbol: string,
     price: number,
@@ -674,20 +674,20 @@ type ShipyardTransaction = {
     timestamp: string
 }
 
-type Cooldown = {
+export type Cooldown = {
     shipSymbol: ShipSymbol,
     totalSeconds: number,
     remainingSeconds: number,
     expiration: number
 }
 
-type Chart = {
+export type Chart = {
     waypointSymbol: WaypointSymbol,
     submittedBy: string,
     submittedOn: string
 }
 
-type Waypoint =  {
+export type Waypoint =  {
     symbol: WaypointSymbol,
     type: WaypointType,
     systemSymbol: string,
@@ -699,13 +699,13 @@ type Waypoint =  {
     chart: Chart
 }
 
-type WaypointFaction = Pick<Faction, "symbol">
+export type WaypointFaction = Pick<Faction, "symbol">
 
-type WaypointOrbital = {
+export type WaypointOrbital = {
     symbol: string
 }
 
-type System = {
+export type System = {
     symbol: string,
     sectorSymbol: string,
     type: SystemType,
@@ -715,15 +715,15 @@ type System = {
     factions: Array<SystemFaction>
 }
 
-type ConnectedSystem = {
+export type ConnectedSystem = {
     factionSymbol: FactionSymbol
 } & Exclude<System, "waypoints" | "factions">
 
-type SystemFaction = Pick<Faction, "symbol">
+export type SystemFaction = Pick<Faction, "symbol">
 
-type SystemWaypoint = Pick<Waypoint, "symbol" | "type" | "x" | "y">
+export type SystemWaypoint = Pick<Waypoint, "symbol" | "type" | "x" | "y">
 
-type Survey = {
+export type Survey = {
     signature: string,
     symbol: string,
     deposits: Array<SurveyDeposit>,
@@ -731,21 +731,21 @@ type Survey = {
     size: SurveySize
 }
 
-type SurveyDeposit = {
+export type SurveyDeposit = {
     symbol: string
 }
 
-type Extraction = {
+export type Extraction = {
     shipSymbol: ShipSymbol,
     yield: ExtractionYield
 }
 
-type ExtractionYield = {
+export type ExtractionYield = {
     symbol: string,
     units: number
 }
 
-type Market = {
+export type Market = {
     symbol: string,
     exports: Array<TradeGood>,
     imports: Array<TradeGood>,
@@ -754,7 +754,7 @@ type Market = {
     tradeGoods: Array<MarketTradeGood>
 }
 
-type MarketTradeGood = {
+export type MarketTradeGood = {
     symbol: TradeGood,
     tradeVolume: number,
     supply: MarketTradeGoodSupplyType,
@@ -762,7 +762,7 @@ type MarketTradeGood = {
     sellPrice: number
 }
 
-type MarketTransaction = {
+export type MarketTransaction = {
     waypointSymbol: WaypointSymbol,
     shipSymbol: ShipSymbol,
     tradeSymbol: string,
@@ -773,9 +773,9 @@ type MarketTransaction = {
     timestramp: string
 }
 
-type TransactionType = "PURCHASE" | "SELL"
+export type TransactionType = "PURCHASE" | "SELL"
 
-type JumpGate = {
+export type JumpGate = {
     jumpRange: number,
     factionSymbol: FactionSymbol,
     connectedSystems: Array<ConnectedSystem>
@@ -789,39 +789,39 @@ type JumpGate = {
  * START CUSTOM TYPES
  */
 
-type AgentSymbol = string;
+export type AgentSymbol = string;
 
-type WaypointSymbol = string;
+export type WaypointSymbol = string;
 
-type ShipSymbol = string;
+export type ShipSymbol = string;
 
-type SystemSymbol = string;
+export type SystemSymbol = string;
 
-type Requirements = {
+export type Requirements = {
     power: number,
     crew: number,
     slots: number
 }
 
-type BaseResponse<T> = {
+export type BaseResponse<T> = {
     data: T
 }
 
-type PaginatedResponse<T> = {
+export type PaginatedResponse<T> = {
     meta: Meta
 } & BaseResponse<T>
 
-type SpaceTradersResponse<T> = T extends Array<infer U> 
+export type SpaceTradersResponse<T> = T extends Array<infer U> 
     ? Promise<PaginatedResponse<U>>
     : Promise<BaseResponse<T>>;
 
-type RegisterAgentRequestBody = {
+export type RegisterAgentRequestBody = {
     faction: FactionSymbol,
     symbol: string,
     email: string | null
 }
 
-type RegisterAgentResponseBody = {
+export type RegisterAgentResponseBody = {
     data: {
         agent: Agent,
         contract: Contract,
@@ -831,33 +831,33 @@ type RegisterAgentResponseBody = {
     }
 }
 
-type ContractDeliverRequestBody = {
+export type ContractDeliverRequestBody = {
     shipSymbol: string,
     tradeSymbol: string,
     units: number
 }
 
-type ContractDeliverResponseBody = {
+export type ContractDeliverResponseBody = {
     contract: Contract,
     cargo: ShipCargo
 }
 
-type PurchaseShipRequestBody = {
+export type PurchaseShipRequestBody = {
     shipType: ShipType,
     waypointSymbol: WaypointSymbol
 }
 
-type PurchaseShipResponseBody = {
+export type PurchaseShipResponseBody = {
     agent: Agent,
     ship: Ship,
     transaction: ShipyardTransaction
 }
 
-type ShipRefineRequestBody = {
+export type ShipRefineRequestBody = {
     produce: ShipRefineProduce
 }
 
-type ShipRefineResponseBody = {
+export type ShipRefineResponseBody = {
     cargo: ShipCargo,
     cooldown: Cooldown,
     produced: {
@@ -870,125 +870,125 @@ type ShipRefineResponseBody = {
     }[],
 }
 
-type CreateChartResponseBody = {
+export type CreateChartResponseBody = {
     chart: Chart,
     waypoint: Waypoint
 }
 
-type CreateSurveyResponseBody = {
+export type CreateSurveyResponseBody = {
     cooldown: Cooldown,
     surveys: Array<Survey>
 }
 
-type ExtractResourceRequestBody = {
+export type ExtractResourceRequestBody = {
     survey: Survey
 }
 
-type ExtractResourcesResponseBody = {
+export type ExtractResourcesResponseBody = {
     cooldown: Cooldown,
     extraction: Extraction,
     cargo: ShipCargo
 }
 
-type JettsionCargoRequestBody = {
+export type JettsionCargoRequestBody = {
     symbol: string,
     units: number
 }
 
-type JettisonCargoResponseBody = {
+export type JettisonCargoResponseBody = {
     cargo: ShipCargo
 }
 
-type JumpShipRequestBody = {
+export type JumpShipRequestBody = {
     systemSymbol: string
 }
 
-type JumpShipResponseBody = {
+export type JumpShipResponseBody = {
     cooldown: Cooldown,
     nav: ShipNav
 }
 
-type ShipNavigateRequestBody = {
+export type ShipNavigateRequestBody = {
     waypointSymbol: WaypointSymbol
 }
 
-type ShipNavigateResponseBody = {
+export type ShipNavigateResponseBody = {
     fuel: ShipFuel,
     nav: ShipNav
 }
 
-type PatchShipNavRequestBody = {
+export type PatchShipNavRequestBody = {
     flightMode: ShipNavFlightMode
 }
 
-type WarpShipRequestBody = {
+export type WarpShipRequestBody = {
     waypointSymbol: WaypointSymbol
 }
 
-type WarpShipResponseBody = {
+export type WarpShipResponseBody = {
     fuel: ShipFuel,
     nav: ShipNav
 }
 
-type SellCargoRequestBody = {
+export type SellCargoRequestBody = {
     symbol: string,
     units: number
 }
 
-type SellCargoResponseBody = {
+export type SellCargoResponseBody = {
     agent: Agent,
     cargo: ShipCargo,
     transaction: MarketTransaction
 }
 
-type ScanWaypointsResponseBody = {
+export type ScanWaypointsResponseBody = {
     cooldown: Cooldown,
     waypoints: Array<Waypoint>
 }
 
-type ScanSystemsResponseBody = {
+export type ScanSystemsResponseBody = {
     cooldown: Cooldown,
     systems: Array<System>
 }
 
-type ScanShipsResponseBody = {
+export type ScanShipsResponseBody = {
     cooldown: Cooldown,
     ships: Array<Ship>
 }
 
-type RefuelShipResponseBody = {
+export type RefuelShipResponseBody = {
     agent: Agent,
     fuel: ShipFuel,
     transaction: MarketTransaction
 }
 
-type PurchaseCargoRequestBody = {
+export type PurchaseCargoRequestBody = {
     symbol: string,
     units: number
 }
 
-type PurchaseCargoResponseBody = {
+export type PurchaseCargoResponseBody = {
     agent: Agent,
     cargo: ShipCargo,
     transaction: MarketTransaction
 }
 
-type TransferCargoRequestBody = {
+export type TransferCargoRequestBody = {
     tradeSymbol: string,
     untis: number,
     shipSymbol: string
 }
 
-type TransferCargoResponseBody = {
+export type TransferCargoResponseBody = {
     cargo: ShipCargo
 }
 
-type ContractAcceptResponseBody = {
+export type ContractAcceptResponseBody = {
     agent: Agent, 
     contract: Contract
 }
 
-type ContractFulfillResponseBody  = ContractAcceptResponseBody;
+export type ContractFulfillResponseBody  = ContractAcceptResponseBody;
 
 export declare class Poisun {
     private _token: string;
